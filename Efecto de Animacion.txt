@@ -1,0 +1,31 @@
+HTML
+
+<div class="animated-background">
+  </div>
+SCSS
+
+.animated-background {
+  background-image: url('tu-imagen-de-fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px; /* Ajusta la altura */
+  animation: moveBackground 10s infinite alternate; /* Aplica la animación */
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+
+
+¡Descubre nuestros sabores autóctonos! Elaboramos delicias con harinas de algarroba, integral, mistol y nuez, rescatando lo mejor de nuestra tierra en cada bocado. Productos naturales y nutritivos para disfrutar en cada momento.
+
+Sabor Ancestral, Nutrición Moderna: Creamos productos únicos con la riqueza de harinas de algarroba, integral, mistol y nuez. Una experiencia deliciosa y saludable que conecta con nuestras raíces.
+
+Nuestra Esencia en Cada Bocado: Elaboramos productos artesanales con harinas de algarroba, integral, mistol y nuez, ofreciendo una propuesta nutritiva y llena de sabor local. Descubre la tradición reinventada.
+
+
+Tesoros Naturales en tu Mesa: Ofrecemos productos artesanales elaborados con harinas de algarroba, integral, mistol y nuez, rescatando sabores auténticos y nutritivos de nuestra tierra. Una experiencia deliciosa y saludable para compartir.
+
+Sabor y Nutrición de Origen: Creamos alimentos únicos utilizando la riqueza de harinas de algarroba, integral, mistol y nuez, brindando una propuesta natural y llena de sabor local. Descubre una nueva forma de disfrutar lo nuestro.

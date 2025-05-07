@@ -1,0 +1,551 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER DTK */
+header {
+  height: 30%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  padding: 1em;
+  margin-bottom: 1rem;
+}
+
+.logo-link {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.logo-img {
+  object-fit: cover;
+  width: 15vw;
+  height: 50%;
+}
+
+nav ul {
+  gap: 1rem;
+}
+nav ul li .nav-link {
+  font-size: 1rem;
+  color: black;
+}
+nav ul a {
+  font-family: "Raleway", sans-serif;
+  position: relative; /* Necesario para posicionar la pseudo-clase ::after */
+  text-decoration: none; /* Opcional: si no quieres subrayado por defecto */
+  color: #333; /* O el color de tu texto */
+  padding-bottom: 5px; /* Espacio para que aparezca la línea */
+  transition: color 0.3s ease; /* Transición suave para el color del texto (opcional) */
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* Grosor de la línea */
+  background-color: #de3344; /* Color de la línea */
+  transform: scaleX(0); /* Inicialmente la línea no es visible (escala en el eje X es 0) */
+  transition: transform 0.3s ease; /* Transición suave para la aparición de la línea */
+}
+
+nav ul li a:hover {
+  color: #007bff; /* Cambia el color del texto al pasar el mouse (opcional) */
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1); /* Al pasar el mouse, la línea se expande al 100% del ancho */
+}
+
+/**BODY***/
+.contenedor-bd {
+  width: 100%;
+  height: 620px;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-body {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  display: block;
+}
+
+.bg-transparency {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.tt-index {
+  width: 100%;
+  margin: auto;
+  font-family: "Raleway", sans-serif;
+  font-size: 4rem;
+}
+
+/*FOOTER*/
+.footer-content {
+  text-align: left;
+  background-color: rgba(235, 235, 235, 0.996);
+  width: 100%;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 1rem;
+}
+
+.footer-m {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.footer-m ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-m a {
+  text-decoration: none;
+  color: rgb(4, 4, 4);
+}
+
+.center-f {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  color: rgb(19, 19, 19);
+  margin-bottom: 1rem;
+}
+
+.center-f a {
+  color: rgb(19, 19, 19);
+  text-decoration: none;
+}
+
+.center-f .logo-img-footer {
+  padding: 1rem;
+  width: 70%;
+}
+
+.redes-fa {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 1rem;
+  size: 20%;
+}
+.redes-fa i {
+  color: #141414;
+  font-size: 1.5rem;
+}
+
+.copy {
+  text-align: center;
+}
+
+/*PRODUCTOS DSK*/
+.main-p {
+  margin: 0;
+  text-align: center;
+  color: #de3344;
+}
+
+.content-galery {
+  background-color: rgba(235, 235, 235, 0.996);
+  width: 100%;
+  height: 620px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.img-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease; /* Transición suave para la opacidad de la imagen */
+}
+
+/****EFECTO OBTENIDO DE GEMINI PARA LA GALERIA*****/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0; /* Inicialmente invisible */
+  transition: background-color 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem; /* Tamaño de fuente del texto (ajusta según necesites) */
+}
+
+.img-content:hover .overlay {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.5); /* Muestra la capa oscura */
+  opacity: 1; /* Hace visible el texto */
+}
+
+/***INFORMACION DSKT**/
+.main-container {
+  background-color: rgba(235, 235, 235, 0.996);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.txt-info-uno {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.img-info-uno {
+  padding: 1rem;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.info-txt-dos {
+  grid-row: 2/3;
+  grid-column: 2/4;
+}
+
+.img-info-dos {
+  padding: 1rem;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.info-txt-3 {
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
+
+span {
+  font-weight: bold;
+}
+
+/**NOSOTROS**/
+.nos-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  background-color: rgba(235, 235, 235, 0.996);
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.historia {
+  height: fit-content;
+  font-family: "Raleway", sans-serif;
+  color: #141414;
+  text-align: center;
+  padding: 2rem;
+}
+
+.img-med {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main-ctt {
+  margin: 0;
+  text-align: center;
+}
+
+.form-grid {
+  margin: 0;
+  width: 100%;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr, 100px;
+  gap: 2rem;
+  background-color: rgba(235, 235, 235, 0.996);
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container-form {
+  grid-row: 2/3;
+  grid-column: 1/3;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-group input[type=text],
+.form-group input[type=email],
+.form-group textarea {
+  display: block;
+  padding: 7px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.form-group input[type=text]:focus,
+.form-group input[type=email]:focus,
+.form-group textarea:focus {
+  border-color: #de3344;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.form-group textarea {
+  resize: horizontal;
+  padding: 0.5rem;
+}
+
+.submit-btn {
+  background-color: #e1453d;
+  color: white;
+  margin-top: 7px;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #7e3d3a;
+}
+
+.titulo-ct {
+  padding: 1rem;
+  place-self: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  color: #191919;
+}
+
+.mapa-form {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.mapa-form .p-maps {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  color: #ce443c;
+}
+
+@media (max-width: 600px) {
+  /*PRODUCTOS MOBILE*/
+  .content-galery {
+    background-color: rgba(235, 235, 235, 0.996);
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 200px);
+  }
+  .tt-producto {
+    text-align: center;
+    place-items: center;
+    padding: auto;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5rem;
+    color: #de3344;
+  }
+  .img-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  /*FOOTER MOBILE*/
+  .logo-img {
+    margin-top: 0.5rem;
+    width: 27%;
+    height: 50%;
+    margin-left: 3rem;
+  }
+  .footer-content .center-f .logo-img-footer {
+    width: 60%;
+  }
+  /*INFORMACION MOBILE*/
+  .main-container {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  /*NOSOTROS MOBILE*/
+  .nos-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .img-med {
+    padding: 1rem;
+  }
+  /*CONTACTO*/
+  .main-ctt {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .form-grid {
+    margin: 0;
+    justify-content: center;
+    place-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .mapa-form {
+    overflow: hidden;
+    width: 90%;
+    height: auto;
+  }
+}
+@media (max-width: 900px) {
+  body {
+    margin: 0;
+  }
+  .logo-img {
+    width: 30%;
+    margin-left: 40px;
+  }
+  .center-f .logo-img-footer {
+    width: 70%;
+  }
+  /*INFORMACION TABLET*/
+  .main-container {
+    background-color: rgba(235, 235, 235, 0.996);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .txt-info-uno {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  .img-info-uno {
+    padding: 1rem;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  /*NOSOTROS TABLET*/
+  .nos-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/*WHSP FLOTANTE GEMINI Y PROPIO*/
+.whatsapp-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999; /* Asegura que esté por encima de otros elementos */
+}
+
+.whatsapp-flotante a {
+  display: flex;
+  align-items: center;
+  background-color: rgba(222, 51, 68, 0.7529411765); /* Color verde de WhatsApp */
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 15px;
+  text-decoration: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#wsp-p {
+  font-size: 2rem;
+  margin-right: 4px;
+}
+
+.whatsapp-flotante span {
+  font-weight: bold;
+}
+
+/* Opcional: Animación al pasar el ratón */
+.whatsapp-flotante a:hover {
+  opacity: 0.9;
+}
+
+/*# sourceMappingURL=style.css.map */
