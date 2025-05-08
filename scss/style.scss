@@ -1,17 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@use "utilidades/reset";
+@import "utilidades/variables";
 
-  }
 /* HEADER DTK */
-
+body{
+  background-color: #fff;
+  font-family: $fuente-principal;
+  margin-left: 2px;
+  margin-right: 2px;
+}
   header {
-    height: 30%;
     background-color: #ffffff;
     display: flex;
-    justify-content: space-between;
-    height: auto;
+    justify-content: space-evenly;
     padding: 1em;
     margin-bottom: 1rem; 
   }
@@ -19,49 +19,47 @@
   .logo-link{
     width: 100%;
     height: 100%;
-    margin: 0;
+    margin-left: 2rem;
+      .logo-img {
+    width: 25%;
+    height: auto; 
   }
-    .logo-img {
-    object-fit: cover;
-    width: 15vw;
-    height: 50%; 
   }
 
+ /* Efecto Obtenido de Gemini*/
  nav ul {
-    gap: 1rem;
-    li .nav-link{
-    font-size: 1rem;
-    color: black;
-  } 
-  a {
-    font-family: "Raleway", sans-serif;
-    position: relative; /* Necesario para posicionar la pseudo-clase ::after */
-  text-decoration: none; /* Opcional: si no quieres subrayado por defecto */
-  color: #333; /* O el color de tu texto */
-  padding-bottom: 5px; /* Espacio para que aparezca la línea */
-  transition: color 0.3s ease; /* Transición suave para el color del texto (opcional) */
+  gap: 1rem; /* Espacio entre los elementos de la lista */
 }
- }
+
+nav ul li a {
+  font-family: $fuente-principal; /* Fuente del texto del enlace */
+  position: relative; /* Necesario para posicionar la pseudo-clase ::after */
+  text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+  color: #333; /* Color del texto del enlace */
+  padding-bottom: 5px; /* Espacio inferior para la línea al hacer hover */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color al hacer hover */
+  font-size: 1rem; /* Tamaño de la fuente del enlace */
+}
+
 nav ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  content: ''; /* Necesario para que la pseudo-clase se renderice */
+  position: absolute; /* Posicionamiento absoluto respecto al elemento padre (<a>) */
+  left: 0; /* Alineado al borde izquierdo del padre */
+  bottom: 0; /* Alineado al borde inferior del padre */
+  width: 100%; /* Ancho igual al del padre */
   height: 2px; /* Grosor de la línea */
   background-color: #de3344; /* Color de la línea */
-  transform: scaleX(0); /* Inicialmente la línea no es visible (escala en el eje X es 0) */
+  transform: scaleX(0); /* Inicialmente la línea no es visible (escala horizontal en 0) */
   transition: transform 0.3s ease; /* Transición suave para la aparición de la línea */
 }
 
 nav ul li a:hover {
-  color: #007bff; /* Cambia el color del texto al pasar el mouse (opcional) */
+  color: #007bff; /* Cambia el color del texto al pasar el mouse */
 }
 
 nav ul li a:hover::after {
-  transform: scaleX(1); /* Al pasar el mouse, la línea se expande al 100% del ancho */
+  transform: scaleX(1); /* Expande la línea al 100% del ancho al pasar el mouse */
 }
-
 /**BODY***/
 
 
@@ -93,9 +91,10 @@ nav ul li a:hover::after {
     }
   
     .tt-index {
+      padding: 1rem;
       width: 100%;
       margin: auto;
-      font-family: "Raleway", sans-serif;
+      font-family: $fuente-principal;
       font-size: 4rem;
     }
 
@@ -109,7 +108,7 @@ nav ul li a:hover::after {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    padding: 1rem; 
+    padding: 0.5rem; 
 }
 
 .footer-m {
@@ -124,13 +123,12 @@ nav ul li a:hover::after {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-.footer-m a {
+ a {
     text-decoration: none;
     color: rgb(4, 4, 4);
+    font-size: 0.5rem;
 }
-
+}
 .center-f {
     display: flex;
     flex-direction: column;
@@ -142,38 +140,41 @@ nav ul li a:hover::after {
 }
 
 .center-f a {
-    color: rgb(19, 19, 19);
-    text-decoration: none;
-}
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: rgb(19, 19, 19);
+
+ }
 
 .center-f .logo-img-footer { 
     padding: 0.2rem;
-    width: 70%;
+    width: 25vh;
 }
 
 .redes-fa {
-    
+    display: flex;
     width: 100%;
     display: flex;
-
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 1rem;
     size: 20%;
  i{
       color: #141414;
-      font-size: 1.2rem;
+      font-size: 1rem;
  }
 
 }
 .copy{
   text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.5rem;
  }
 /*PRODUCTOS DSK*/
 .main-p {
   margin: 0;
   text-align: center;
-  color: #de3344;
+  color: $color-principal;
 }
 .content-galery {
   background-color: rgba(235, 235, 235, 0.996);
@@ -213,12 +214,12 @@ nav ul li a:hover::after {
   text-align: center;
   opacity: 0; /* Inicialmente invisible */
   transition: background-color 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
-  font-family: "Raleway", sans-serif;
+  font-family: $fuente-principal;
   font-size: 1.2rem; /* Tamaño de fuente del texto (ajusta según necesites) */
 }
 
 .img-content:hover .overlay {
-  font-family: "Raleway", sans-serif;
+  font-family: $fuente-principal;
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.5); /* Muestra la capa oscura */
   opacity: 1; /* Hace visible el texto */
@@ -288,7 +289,7 @@ span {
 }
 .historia{
     height: fit-content;
-    font-family: "Raleway", sans-serif;
+    font-family: $fuente-principal;
     color: #141414;
     text-align: center;
     padding: 2rem;
@@ -314,13 +315,11 @@ span {
   margin: 0;
   width: 100%;
   display: grid;
-  text-align: center;
-  justify-content: center;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr, 100px;
-  gap: 2rem;
+  gap: 1rem;
+  align-items: center;
   background-color: rgba(235, 235, 235, 0.996);
-  place-items: center;
   text-align: center;
   overflow: hidden;
 
@@ -368,7 +367,7 @@ span {
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
-    border-color: #de3344;
+    border-color: $color-principal;
     outline: none;
     box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
   
@@ -380,7 +379,7 @@ span {
 }
 
 .submit-btn {
-    background-color: #e1453d;
+    background-color: $color-principal;
     color: white;
     margin-top: 7px;
     padding: 0.7rem;
@@ -397,27 +396,27 @@ span {
 .titulo-ct{
   padding: 1rem;
   place-self: center;
-  font-family: "Raleway", sans-serif;
+  font-family: $fuente-principal;
   font-size: 2rem;
   color: #191919;
 }
 
 .mapa-form {
-    width: 90%;
-  height: 90%;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
  
 }
 .mapa-form .p-maps {
-  font-family: "Raleway", sans-serif;
+  font-family: $fuente-principal;
   font-size: 1.5rem;
-  color: #ce443c;
+  color: $color-principal;
 }
 @media (max-width: 600px) {
 
   /*PRODUCTOS MOBILE*/
   .content-galery {
-  background-color: rgba(235, 235, 235, 0.996);
+  background-color: $color-fondos;
   width: 100%;
   height: auto;
   display: grid;
@@ -428,25 +427,18 @@ span {
     text-align: center;
     place-items: center;
     padding: auto;
-    font-family: "Raleway", sans-serif;
     font-size: 1.5rem;
-    color: #de3344;
+    color: $color-principal;
 
   }
 
-.img-content {
-  position: relative; 
-  width: 100%;
-  height: 100%;
-  overflow: hidden; 
-}
+  a .logo-img {
+    width: 20vh;
+    height: auto;
+    margin-left: 2rem;
+  }
  /*FOOTER MOBILE*/
-  .logo-img {
-    margin-top: 0.5rem;
-    width: 27%;
-    height: 50%; 
-    margin-left: 3rem;
-  }
+
     .footer-content .center-f .logo-img-footer{
       width: 60%;
  }
@@ -497,17 +489,14 @@ span {
   body{
     margin: 0;
   }
-.logo-img{
-  width: 30%;
-  margin-left: 40px;
-}
+
 .center-f .logo-img-footer {
   width: 70%;
 }
 /*INFORMACION TABLET*/
 
 .main-container{
-  background-color: rgba(235, 235, 235, 0.996);
+  background-color: $color-fondos;
   display: flex;
   flex-direction: column;
   justify-content: center;
