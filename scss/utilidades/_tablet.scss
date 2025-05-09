@@ -1,0 +1,42 @@
+@media (max-width: 900px) {
+
+    body{
+      margin: 0;
+    }
+  
+  .center-f .logo-img-footer {
+    width: 70%;
+  }
+  /*INFORMACION TABLET*/
+  
+  .main-container{
+    background-color: $color-fondos;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+  }
+      
+  .txt-info-uno {
+    grid-column: 1/3 ;
+    grid-row: 1/2;
+  }
+  .img-info-uno{
+    padding: 1rem;
+    grid-column: 3/4;
+    grid-row: 1/2;
+     width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden
+    
+  }
+  /*NOSOTROS TABLET*/
+  .nos-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

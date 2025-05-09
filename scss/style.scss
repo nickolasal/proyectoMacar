@@ -1,5 +1,7 @@
-@use "utilidades/reset";
+@import "utilidades/reset";
 @import "utilidades/variables";
+@import "utilidades/mobile";
+@import "utilidades/tablet";
 
 /* HEADER DTK */
 body{
@@ -9,6 +11,8 @@ body{
   margin-right: 2px;
 }
   header {
+    width: 100%;
+    height: 100%;
     background-color: #ffffff;
     display: flex;
     justify-content: space-evenly;
@@ -20,14 +24,16 @@ body{
     width: 100%;
     height: 100%;
     margin-left: 2rem;
-      .logo-img {
+    .logo-img {
     width: 25%;
     height: auto; 
   }
   }
 
- /* Efecto Obtenido de Gemini*/
- nav ul {
+ 
+/* Efecto Obtenido de Gemini*/
+
+nav ul {
   gap: 1rem; /* Espacio entre los elementos de la lista */
 }
 
@@ -246,7 +252,7 @@ nav ul li a:hover::after {
   padding: 1rem;
   grid-column: 3/4;
   grid-row: 1/2;
-   width: 100%; 
+  width: 100%; 
   height: 100%;
   object-fit: cover;
   overflow: hidden
@@ -412,151 +418,37 @@ span {
   font-size: 1.5rem;
   color: $color-principal;
 }
-@media (max-width: 600px) {
-
-  /*PRODUCTOS MOBILE*/
-  .content-galery {
-  background-color: $color-fondos;
-  width: 100%;
-  height: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows:repeat(6, 200px);
+  /*WHSP FLOTANTE GEMINI Y PROPIO*/
+  .whatsapp-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
   }
-  .tt-producto {
-    text-align: center;
-    place-items: center;
-    padding: auto;
-    font-size: 1.5rem;
-    color: $color-principal;
-
+  
+  .whatsapp-flotante a {
+    display: flex;
+    align-items: center;
+    background-color: #de3344c0; /* Color verde de WhatsApp */
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 15px;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  #wsp-p{
+    font-size: 2rem;
+    margin-right: 4px;
+  }
+  
+  .whatsapp-flotante span {
+    font-weight: bold;
+  }
+  
+  /* Opcional: Animación al pasar el ratón */
+  .whatsapp-flotante a:hover {
+    opacity: 0.9;
   }
 
-  a .logo-img {
-    width: 20vh;
-    height: auto;
-    margin-left: 2rem;
-  }
- /*FOOTER MOBILE*/
-
-    .footer-content .center-f .logo-img-footer{
-      width: 60%;
- }
-  /*INFORMACION MOBILE*/
- .main-container{
-  margin: 0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
- }
- /*NOSOTROS MOBILE*/
- .nos-container {
-  display: flex;
-  flex-direction: column;
-
- } 
  
- .img-med {
-   padding: 1rem;
- }
- /*CONTACTO*/
-
- .main-ctt {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
- }
- .form-grid {
-  margin: 0;
-  justify-content: center;
-  place-items: center;
-  display: flex;
-  flex-direction: column;
-  
- }
- .mapa-form {
-  overflow: hidden;
-  width: 90%;
-  height: auto
-}
-
-}
-
-@media (max-width: 900px) {
-
-  body{
-    margin: 0;
-  }
-
-.center-f .logo-img-footer {
-  width: 70%;
-}
-/*INFORMACION TABLET*/
-
-.main-container{
-  background-color: $color-fondos;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  gap: 1rem;
-  padding: 1rem;
-}
-    
-.txt-info-uno {
-  grid-column: 1/3 ;
-  grid-row: 1/2;
-}
-.img-info-uno{
-  padding: 1rem;
-  grid-column: 3/4;
-  grid-row: 1/2;
-   width: 100%; 
-  height: 100%;
-  object-fit: cover;
-  overflow: hidden
-  
-}
-
-/*NOSOTROS TABLET*/
-
-.nos-container {
-  display: flex;
-  flex-direction: column;
-}
-}
-/*WHSP FLOTANTE GEMINI Y PROPIO*/
-.whatsapp-flotante {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999; /* Asegura que esté por encima de otros elementos */
-}
-
-.whatsapp-flotante a {
-  display: flex;
-  align-items: center;
-  background-color: #de3344c0; /* Color verde de WhatsApp */
-  color: #fff;
-  border-radius: 30px;
-  padding: 10px 15px;
-  text-decoration: none;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-#wsp-p{
-  font-size: 2rem;
-  margin-right: 4px;
-}
-
-.whatsapp-flotante span {
-  font-weight: bold;
-}
-
-/* Opcional: Animación al pasar el ratón */
-.whatsapp-flotante a:hover {
-  opacity: 0.9;
-}
