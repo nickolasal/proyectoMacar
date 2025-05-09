@@ -1,17 +1,9 @@
 @media (max-width: 600px) {
 
-  .logo-link{
-    width: 100%;
-    height: 100%;
-    margin-left: 2rem;
-    a .logo-img {
-      width: 28vh;
-      height: auto;
-      margin-left: 2rem;
+  .logo-link .logo-img {
+      width: 50%;
     }
-
-  }
-    /*PRODUCTOS MOBILE*/
+/*PRODUCTOS MOBILE*/
     .content-galery {
     background-color: $color-fondos;
     width: 100%;
@@ -26,16 +18,51 @@
       padding: auto;
       font-size: 1.5rem;
       color: $color-principal;
-  
-    }
-  
+ }
 
-   /*FOOTER MOBILE*/
-  
-      .footer-content .center-f .logo-img-footer{
+ .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0; /* Inicialmente invisible */
+  transition: background-color 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
+  font-family: $fuente-principal;
+  font-size: 1.2rem; /* Tamaño de fuente del texto (ajusta según necesites) */
+}
+
+.img-content .overlay {
+  font-family: $fuente-principal;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.5); /* Muestra la capa oscura */
+  opacity: 1; /* Hace visible el texto */
+}
+ /*FOOTER MOBILE*/
+  .footer-content .center-f .logo-img-footer{
         width: 60%;
    }
-    /*INFORMACION MOBILE*/
+
+   .redes-fa {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+    size: 20%;
+ i{
+      color: #141414;
+      font-size: 1rem;
+ }
+}
+ /*INFORMACION MOBILE*/
    .main-container{
     margin: 0;
     text-align: center;
@@ -50,7 +77,7 @@
    } 
    
    .img-med {
-     padding: 1rem;
+     padding: auto;
    }
    /*CONTACTO*/
   
@@ -75,4 +102,4 @@
     height: auto
   }
   
-  }
+}

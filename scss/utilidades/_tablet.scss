@@ -1,8 +1,9 @@
 @media (max-width: 900px) {
 
-    body{
-      margin: 0;
+  .logo-link .logo-img {
+      width: 40%;
     }
+
   
   .center-f .logo-img-footer {
     width: 70%;
@@ -17,7 +18,7 @@
     text-align: center;
     width: 100%;
     gap: 1rem;
-    padding: 1rem;
+    padding: auto;
   }
       
   .txt-info-uno {
@@ -25,7 +26,7 @@
     grid-row: 1/2;
   }
   .img-info-uno{
-    padding: 1rem;
+    padding: auto;
     grid-column: 3/4;
     grid-row: 1/2;
      width: 100%; 
